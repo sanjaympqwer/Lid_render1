@@ -1,0 +1,10 @@
+flask>=3.0.0
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+requests>=2.31.0
+lap>=0.5.12
+flask-cors>=4.0.0
+# Install torch/torchvision with the official instructions for your GPU/CPU
+
+
