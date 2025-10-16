@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string, Response, jsonify, send_file
+from flask import Flask, request, render_template_string, Response, jsonify, send_file, redirect, url_for
 from flask_cors import CORS
 import subprocess
 import sys
@@ -188,10 +188,7 @@ HTML_PAGE = """
 
 @app.route("/")
 def index():
-    try:
-        return send_file('index.html')
-    except Exception:
-        return render_template_string(HTML_PAGE)
+    return redirect(url_for('public'))
 
 PUBLIC_PAGE = """
 <!DOCTYPE html>
