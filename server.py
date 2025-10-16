@@ -12,6 +12,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 process = None
+
 log_buffer = []
 lock = threading.Lock()
 
@@ -189,6 +190,10 @@ HTML_PAGE = """
 @app.route("/")
 def index():
     return redirect(url_for('public'))
+
+@app.route("/health")
+def health():
+    return jsonify({"ok": True}), 200
 
 PUBLIC_PAGE = """
 <!DOCTYPE html>
